@@ -1,6 +1,6 @@
 # Lightweight Single-Image Super-Resolution Network with Attentive Auxiliary Feature Learning
 
-A official implementation about our paper: Lightweight Single-Image Super-Resolution Network with Attentive Auxiliary Feature Learning(ACCV2020)
+An official implementation about our paper: Lightweight Single-Image Super-Resolution Network with Attentive Auxiliary Feature Learning(ACCV2020)
 
 [Paper(Arxiv)](https://arxiv.org/pdf/2011.06773.pdf)
 
