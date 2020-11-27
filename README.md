@@ -1,6 +1,6 @@
-# Adaptively Multi-gradients Auxiliary Feature Learning for Efficient Super-resolution
+# Lightweight Single-Image Super-Resolution Network with Attentive Auxiliary Feature Learning
 
-A official implementation about our paper: Adaptively Multi-gradients Auxiliary Feature Learning for Efficient Super-resolution(ACCV2020)
+A official implementation about our paper: Lightweight Single-Image Super-Resolution Network with Attentive Auxiliary Feature Learning(ACCV2020)
 
 [Paper(Arxiv)](https://arxiv.org/pdf/2011.06773.pdf)
 
