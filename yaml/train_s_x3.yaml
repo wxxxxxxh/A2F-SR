@@ -1,0 +1,72 @@
+DESCRIPTION: '[ACCV2020] AAF: Lightweight SR method'
+
+n_GPUs: 1
+cudnn_benchmark: True
+
+dataset:
+      dir_root: '../../DATASET'
+      dir_hr: 'DIV2K_train_HR'
+      dir_lr: 'DIV2K_train_LR_bicubic/X4'
+      dir_hr_eval: 'DIV2K_train_HR'            #This can be modified according to your need. It is used for evaluating the performance of model at a specific epoch
+      dir_lr_eval: 'DIV2K_train_LR_bicubic/X4' #This can be modified according to your need. It is used for evaluating the performance of model at a specific epoch
+      phase: 'train'        #train
+      test_every: 1000
+      batch_size: 1
+      num_workers: 1
+      scale: &SCALE 3
+      patch_size: 144
+      do_augmentation: True
+      n_colors: 3
+
+model:
+      zoo: 'Model_zoo'
+      name: 'AAF'
+
+tensorboard:
+            save_path: 'tensorboard'
+
+ckp:
+    load_ckp: False
+    save_root: './checkpoint'
+    ckp_path: 'Epoch_'
+    type: 0 #0 for best, 1 for latest, others for specific epoch
+    save_by_epoch: 1
+    loss: ~
+    type: 'L1'
+    weight: 1
+
+optimizer:
+    type: 'ADAM'  #
+    Adam:
+        beta1: 0.9
+        beta2: 0.999
+        epsilon: 0.00000001
+    SGD:
+        momentum: 0.9
+    RMSprop:
+        epsilon: 0.00000001
+    lr: 0.001
+    weight_decay: 0
+  
+schedular:
+          decay_type: 'restart'
+          lr_decay: 200
+          gamma: 0.5
+          period: 1000
+training:
+    eval_when_train: True
+    epochs: 300
+    rgb_range: 255
+    n_colors: 3
+    n_feats: 32
+    block_feats: 128
+    n_layers: 4
+    scale: *SCALE
+    use_hsigmoid: False
+    use_ca: True
+    res_scale: 1
+
+testing:
+        test_dir: './test_img'
+        pretrained_model_path: 'model_best.pt'  #!!Select pretrained model!!
+        result_dir: './result'  #!!You can check results from here!!
