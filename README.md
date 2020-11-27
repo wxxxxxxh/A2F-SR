@@ -34,7 +34,7 @@ pip install -r requirements.txt
 Now, you have build a conda env for running code successfully!
 
 ## Training
-Firstly, please refer to here to get DIV2K which is a widely-used dataset for super-resolution. Put it in any folder, and modify the parameter `dataset.dir_root` in yaml(e.g. `yaml/train_sd_x4.yaml`) as this folder. Our method will scan files according to `dataset.dir_root/dataset.dir_lr`.
+Firstly, please refer to [DIV2K](https://data.vision.ee.ethz.ch/cvl/DIV2K/) to get DIV2K which is a widely-used dataset for super-resolution. Put it in any folder, and modify the parameter `dataset.dir_root` in yaml(e.g. `yaml/train_sd_x4.yaml`) as this folder. Our method will scan files according to `dataset.dir_root/dataset.dir_lr`.
 
 Perform below script to train the model from scratch.
 ```bash
